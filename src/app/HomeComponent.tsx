@@ -3,9 +3,8 @@
 import { useState, useEffect } from 'react';
 import { Container, Box } from '@mui/material';
 
-// Define color constants
 const colors = {
-  background: '#0F0F0F',
+  background: '#000000', // Pure black
   textPrimary: '#fff',
   textSecondary: '#ccc',
 } as const;
@@ -13,10 +12,9 @@ const colors = {
 export default function HomeComponent() {
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
-  // Run only on client-side after mount
   useEffect(() => {
     const timer = setTimeout(() => setIsLoading(false), 2000);
-    return () => clearTimeout(timer); // Cleanup
+    return () => clearTimeout(timer);
   }, []);
 
   if (isLoading) return <div>Loading...</div>;
@@ -28,22 +26,23 @@ export default function HomeComponent() {
         mt: 0,
         minHeight: 'calc(100vh - 70px)',
         padding: { xs: 1, sm: 3 },
-        color: colors.textPrimary,
-        backgroundColor: 'transparent',
+        backgroundColor: colors.background, // Full black
         display: 'flex',
         flexDirection: 'column',
       }}
     >
       <Box
-        component="iframe"
+        component="video"
         src="https://dmtspaceto.s3.me-central-1.amazonaws.com/Smart+Mobility+Analytics+Framework.mp4"
-        title="Online Olayer"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowFullScreen
+        controls
+        autoPlay
+        muted
+        loop
         sx={{
           width: '100%',
           height: '100%',
           flexGrow: 1,
+          backgroundColor: '#000000', // Ensure video background is black
           border: 0,
         }}
       />
