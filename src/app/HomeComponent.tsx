@@ -7,7 +7,7 @@ const colors = {
   background: '#000000',
   textPrimary: '#fff',
   textSecondary: '#ccc',
-  grey: '#808080', // Grey for the div
+  grey: '#808080',
 } as const;
 
 export default function HomeComponent() {
@@ -37,12 +37,10 @@ export default function HomeComponent() {
     >
       <div
         style={{
-          width: '100%',
-          height: '100%',
-         
-          aspectRatio: '16 / 9', // Force 16:9 ratio
+          aspectRatio: '16 / 9', // Fixed 16:9 ratio
+          width: '100%', // Scales to container width, but respects aspect ratio
+          maxHeight: 'calc(100dvh - 70px)', // Caps height to fit viewport
           backgroundColor: colors.grey,
-          objectFit: 'contain', // For consistency (though not needed for div)
           display: 'block',
         }}
       />
