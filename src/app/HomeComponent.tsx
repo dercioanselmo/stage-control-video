@@ -39,8 +39,7 @@ export default function HomeComponent() {
         style={{
           width: '100%',
           height: '100%',
-          maxWidth: '1920px', // Cap at original video width
-          maxHeight: '1080px', // Cap at original video height
+         
           aspectRatio: '16 / 9', // Force 16:9 ratio
           backgroundColor: colors.grey,
           objectFit: 'contain', // For consistency (though not needed for div)
