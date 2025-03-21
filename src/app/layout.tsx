@@ -34,8 +34,9 @@ export default function RootLayout({
         style={{
           margin: 0,
           padding: 0,
-          height: '100dvh', // Full dynamic viewport height
-          overflow: 'hidden', // No scrolling
+          height: '100dvh',
+          width: '100vw', // Explicitly set width
+          overflow: 'hidden',
         }}
       >
         <ClientLayout>{children}</ClientLayout>

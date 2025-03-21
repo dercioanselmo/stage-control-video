@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Container, Box } from '@mui/material';
+import { Container } from '@mui/material';
 
 const colors = {
   background: '#000000',
@@ -20,37 +20,39 @@ export default function HomeComponent() {
   if (isLoading) return <div style={{ color: colors.textPrimary }}>Loading...</div>;
 
   return (
-    <Container
-      maxWidth={false}
-      sx={{
-        flex: 1,
-        padding: { xs: 0, sm: 0 }, // Remove padding to maximize space
-        backgroundColor: colors.background,
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        overflow: 'hidden',
-        width: '100vw', // Full viewport width
-        height: 'calc(100dvh - 70px)', // Exact remaining height
-      }}
-    >
-      <Box
-        component="video"
-        src="https://dmtspaceto.s3.me-central-1.amazonaws.com/Smart+Mobility+Analytics+Framework.mp4"
-        controls
-        autoPlay
-        muted
-        loop
+    <>
+      <style jsx global>{`
+        video {
+          width: 100% !important;
+          height: 100% !important;
+          max-width: 100%;
+          max-height: 100%;
+          object-fit: contain;
+          display: block;
+        }
+      `}</style>
+      <Container
+        maxWidth={false}
         sx={{
-          width: '100% !important', // Force width scaling
-          height: '100% !important', // Force height scaling
-          maxWidth: '100%', // Cap at original width
-          maxHeight: '100%', // Cap at original height
-          objectFit: 'contain', // Scale proportionally
-          border: 0,
-          display: 'block',
+          flex: 1,
+          padding: { xs: 0, sm: 0 },
+          backgroundColor: colors.background,
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          overflow: 'hidden',
+          width: '100vw',
+          height: 'calc(100dvh - 70px)',
         }}
-      />
-    </Container>
+      >
+        <video
+          src="https://dmtspaceto.s3.me-central-1.amazonaws.com/Smart+Mobility+Analytics+Framework.mp4"
+          controls
+          autoPlay
+          muted
+          loop
+        />
+      </Container>
+    </>
   );
 }
