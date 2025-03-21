@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   title: "Stage Control",
   description: "Stage Control",
   icons: {
-    icon: "/Logo.png", // Use PNG directly
+    icon: "/Logo.png",
   },
 };
 
@@ -29,15 +29,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`} 
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         style={{
           margin: 0,
           padding: 0,
           height: '100dvh', // Full dynamic viewport height
-          overflow: 'hidden', // Prevent scrolling
-          display: 'flex',
-          flexDirection: 'column',
+          overflow: 'hidden', // No scrolling
         }}
       >
         <ClientLayout>{children}</ClientLayout>
