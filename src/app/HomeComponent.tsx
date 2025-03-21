@@ -28,7 +28,9 @@ export default function HomeComponent() {
         padding: { xs: 1, sm: 3 },
         backgroundColor: colors.background, 
         display: 'flex',
-        flexDirection: 'column',
+        justifyContent: 'center', // Center video horizontally
+        alignItems: 'center', // Center video vertically
+        flex: 1, // Fill remaining space after header
       }}
     >
       <Box
@@ -39,11 +41,13 @@ export default function HomeComponent() {
         muted
         loop
         sx={{
-          width: '100%',
-          height: '100%',
-          flexGrow: 1,
-          backgroundColor: 'transparent', 
+          maxWidth: '538px', // Max width
+          maxHeight: '305px', // Max height
+          width: '100%', // Scale down if screen is smaller
+          height: 'auto', // Maintain aspect ratio
           border: 0,
+          backgroundColor: 'transparent', 
+          
         }}
       />
     </Container>

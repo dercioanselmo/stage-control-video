@@ -30,7 +30,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`} style={{ margin: 0, padding: 0 }}>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`} 
+        style={{
+          margin: 0,
+          padding: 0,
+          height: '100dvh', // Full dynamic viewport height
+          overflow: 'hidden', // Prevent scrolling
+          display: 'flex',
+          flexDirection: 'column',
+        }}
+      >
         <ClientLayout>{children}</ClientLayout>
       </body>
     </html>
