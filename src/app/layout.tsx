@@ -15,8 +15,11 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Stage Control Users",
-  description: "Stage Control Users Admin",
+  title: "Stage Control",
+  description: "Stage Control",
+  icons: {
+    icon: "/Logo.png", // Use PNG directly
+  },
 };
 
 export default function RootLayout({
@@ -26,6 +29,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`} style={{ margin: 0, padding: 0 }}>
         <ClientLayout>{children}</ClientLayout>
       </body>
