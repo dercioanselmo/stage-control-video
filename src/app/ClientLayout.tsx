@@ -1,16 +1,13 @@
 'use client';
 
-import { SessionProvider } from 'next-auth/react';
 import Header from './components/Header';
-import SessionAwareLayout from './SessionAwareLayout';
+import HomeComponent from './HomeComponent';
 
 export default function ClientLayout({ children }: { children: React.ReactNode }) {
   return (
-    <SessionProvider>
-      <div style={{ minHeight: '100vh' }}> {/* Remove backgroundColor, let SessionAwareLayout handle it */}
+      <div style={{ minHeight: '100vh' }}>
         <Header />
-        <SessionAwareLayout>{children}</SessionAwareLayout>
+        <HomeComponent/>{children}
       </div>
-    </SessionProvider>
   );
 }

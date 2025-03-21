@@ -26,7 +26,7 @@ export default function HomeComponent() {
         mt: 0,
         minHeight: 'calc(100vh - 70px)',
         padding: { xs: 1, sm: 3 },
-        backgroundColor: colors.background, // Full black
+        backgroundColor: colors.background, 
         display: 'flex',
         flexDirection: 'column',
       }}
@@ -42,7 +42,7 @@ export default function HomeComponent() {
           width: '100%',
           height: '100%',
           flexGrow: 1,
-          backgroundColor: '#000000', // Ensure video background is black
+          backgroundColor: 'transparent', 
           border: 0,
         }}
       />

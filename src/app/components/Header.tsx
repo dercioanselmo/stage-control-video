@@ -20,7 +20,7 @@ export default function Header() {
       <Toolbar
         sx={{
           height: '100%',
-          minHeight: '70px', // Matches AppBar height
+          minHeight: '70px', 
           paddingY: 0,
           paddingX: { xs: 1, sm: 2 }, // Reduced padding on mobile (xs), normal on larger screens
           display: 'flex',
