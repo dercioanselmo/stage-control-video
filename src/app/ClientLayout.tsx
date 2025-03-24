@@ -2,7 +2,6 @@
 
 import Header from './components/Header';
 import Rectangle from './components/Rectangle';
-import HomeComponent from './HomeComponent';
 export default function ClientLayout({ children }: { children: React.ReactNode }) {
   return (
     <div
