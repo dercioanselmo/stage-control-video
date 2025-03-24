@@ -2,7 +2,7 @@ import { Box } from '@mui/material';
 import { useEffect, useRef } from 'react';
 
 const Rectangle = ({ 
-  maxWidth = '1200px',
+  maxWidth = '100%',
   bgcolor = 'grey.500',
   sx = {},
   ...props
